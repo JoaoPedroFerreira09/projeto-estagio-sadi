@@ -56,12 +56,12 @@ Siga os passos abaixo para executar o projeto em sua máquina.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO_NO_GITHUB]
+    git clone https://github.com/JoaoPedroFerreira09/projeto-estagio-sadi.git
     ```
 
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd nome-da-pasta-do-projeto
+    cd projeto-estagio-sadi
     ```
 
 3.  **Instale todas as dependências:**
