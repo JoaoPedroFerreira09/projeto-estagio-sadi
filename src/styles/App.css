@@ -1,0 +1,99 @@
+/* src/styles/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #111827;
+  --card-color: #1F2937;
+  --border-color: #374151;
+  --text-primary: #F9FAFB; /* Branco suave */
+  --text-secondary: #9CA3AF;
+  --accent-color: #3b82f6;
+  --accent-color-hover: #2563eb;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.custom-card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-primary); /* AJUSTE: Garantindo que o texto do cabeçalho seja branco */
+}
+
+.btn-custom {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+.btn-custom.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-custom.btn-primary:hover {
+  background-color: var(--accent-color-hover);
+  border-color: var(--accent-color-hover);
+}
+.btn-custom.btn-success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+  color: white; /* AJUSTE: Forçando o texto do botão de sucesso a ser branco */
+}
+
+.profile-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.dropzone-area {
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropzone-area.active {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.dropzone-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px dashed var(--accent-color);
+  border-radius: 0.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
