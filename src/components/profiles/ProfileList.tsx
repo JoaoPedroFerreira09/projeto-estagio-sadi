@@ -15,7 +15,7 @@ interface ProfileListProps {
 const ProfileList: React.FC<ProfileListProps> = ({ profiles, onAddProfile, onDeleteProfile, onUpdateProfileName, onImageClick }) => {
   return (
     <Col lg={4}>
-      <Card className="custom-card">
+      <Card className="custom-card h-100">
         <Card.Header className="custom-card-header d-flex justify-content-between align-items-center">
           <span>Perfis</span>
           <Button variant="success" size="sm" className="btn-custom" onClick={onAddProfile}><FiPlus /> Novo Perfil</Button>

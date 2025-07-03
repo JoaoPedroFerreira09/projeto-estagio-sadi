@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# Agrupamento de Faces - Projeto de Avaliação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta é uma aplicação web desenvolvida para a avaliação de estágio. O objetivo é fornecer uma interface rica e intuitiva para o upload e agrupamento de imagens de faces, simulando um cenário de organização de vídeos capturados em salas de aula.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Frontend**:
+    * **React**: Biblioteca principal para a construção da interface.
+    * **TypeScript**: Para adicionar tipagem estática, segurança e robustez ao código.
+    * **Vite**: Ferramenta de build e alta performance para o ambiente de desenvolvimento.
+* **Estilização e Componentes**:
+    * **React-Bootstrap & Bootstrap**: Utilizados para a estrutura de layout e componentes base da UI.
+    * **CSS Customizado**: Uma folha de estilos personalizada (`App.css`) foi criada para garantir uma identidade visual.
+* **Interatividade**:
+    * **dnd-kit**: Biblioteca moderna e acessível para as funcionalidades de arrastar e soltar internas da aplicação.
+    * **react-dropzone**: Biblioteca especializada para a funcionalidade de upload de arquivos arrastando do computador para o navegador.
+* **Outras Ferramentas**:
+    * **react-router-dom**: Para a navegação e criação de rotas na aplicação.
+    * **Sonner**: Para a exibição de notificações (toasts) de feedback ao usuário.
+    * **React Icons**: Para a utilização de ícones SVG de alta qualidade.
 
-## Expanding the ESLint configuration
+## Estrutura e Organização do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O projeto foi estruturado seguindo o princípio de **Separação de Responsabilidades**, dividindo o código em pastas com propósitos claros e bem definidos para facilitar a manutenção e escalabilidade.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+A organização principal dentro da pasta `src` é a seguinte:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+* **`/pages`**: Contém os componentes de "tela cheia", que atuam como o "cérebro" de cada rota da aplicação. Eles são responsáveis por gerenciar o estado e a lógica de negócios de cada tela.
+    * `DashboardPage.tsx`: Orquestra a tela principal de interação, onde o usuário realiza o upload, o agrupamento e a manipulação das imagens e perfis.
+    * `ProfilesPage.tsx`: Exibe uma página dedicada para a visualização geral de todos os perfis criados no sistema.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **`/components`**: Contém todos os componentes de UI reutilizáveis, que são "visuais" (Presentational Components) e recebem dados e funções via `props`.
+    * `**/gallery`**: Componentes relacionados à galeria principal de imagens.
+    * `**/profiles`**: Componentes para a criação e listagem dos perfis de usuário.
+    * `**/layout`**: Componentes que definem a estrutura visual da página, como a `Sidebar`.
+    * `**/UI`**: Componentes genéricos de interface, como o `Header`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* **`/hooks`**: Armazena hooks customizados do React, como o `useLocalStorage`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **`/services`**: Responsável pela comunicação  como a nossa `api.ts` simulada.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **`/types`**: Centraliza todas as interfaces e tipos do TypeScript.
+
+* **`/styles`**: Contém os arquivos de estilização globais e customizados.
+
+
+## Como Rodar o Projeto Localmente
+
+Siga os passos abaixo para executar o projeto em sua máquina.
+
+**Pré-requisitos:**
+* Node.js (versão 18 ou superior)
+* npm
+
+**Passos:**
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [URL_DO_SEU_REPOSITORIO_NO_GITHUB]
+    ```
+
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd nome-da-pasta-do-projeto
+    ```
+
+3.  **Instale todas as dependências:**
+    ```bash
+    npm install
+    ```
+
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+5.  Abra seu navegador e acesse `http://localhost:5173`

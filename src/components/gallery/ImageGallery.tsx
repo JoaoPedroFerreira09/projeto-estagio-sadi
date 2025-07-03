@@ -16,10 +16,7 @@ interface ImageGalleryProps {
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images, isProcessing, onProcessClick, onFilesSelected, onImageClick }) => {
   const onDrop = useCallback((acceptedFiles: File[]) => { onFilesSelected(acceptedFiles); }, [onFilesSelected]);
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-    onDrop,
-    accept: { 'image/jpeg': [], 'image/png': [] },
-    noClick: true,
-    noKeyboard: true,
+    onDrop, accept: { 'image/jpeg': [], 'image/png': [] }, noClick: true, noKeyboard: true,
   });
 
   return (
@@ -39,8 +36,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, isProcessing, onPro
             {images.map(image => <ImageThumbnail key={image.id} image={image} onImageClick={onImageClick} />)}
           </div>
           {images.length === 0 && !isDragActive && (
-            <div className="d-flex align-items-center justify-content-center h-100 ">
-              <p className=" text-center text-info">Arraste e solte as imagens aqui, ou clique em "Upload"</p>
+            <div className="d-flex align-items-center justify-content-center h-100">
+              <p className="text-muted text-center text-info">Arraste e solte as imagens aqui, ou clique em "Upload"</p>
             </div>
           )}
         </Card.Body>

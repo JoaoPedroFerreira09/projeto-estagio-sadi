@@ -9,34 +9,15 @@ interface ImageThumbnailProps {
 }
 
 const ImageThumbnail: React.FC<ImageThumbnailProps> = ({ image, onImageClick }) => {
-  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
-    id: image.id,
-  });
-
+  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id: image.id });
   const style: React.CSSProperties = {
-    transform: CSS.Translate.toString(transform),
-    cursor: 'grab',
-    width: '100px',
-    height: '100px',
-    transition: 'opacity 0.2s',
-    opacity: isDragging ? 0.5 : 1,
-    touchAction: 'none', 
+    transform: CSS.Translate.toString(transform), cursor: 'grab', width: '100px', height: '100px',
+    transition: 'opacity 0.2s', opacity: isDragging ? 0.5 : 1, touchAction: 'none',
   };
 
   return (
-    <div 
-      ref={setNodeRef} 
-      style={style} 
-      {...listeners} 
-      {...attributes} 
-      onClick={() => onImageClick(image)}
-    >
-      <img
-        src={image.url}
-        alt="face thumbnail"
-        className="rounded"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
-      />
+    <div ref={setNodeRef} style={style} {...listeners} {...attributes} onClick={() => onImageClick(image)}>
+      <img src={image.url} alt="face thumbnail" className="rounded" style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }} />
     </div>
   );
 };

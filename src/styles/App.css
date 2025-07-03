@@ -1,11 +1,10 @@
-/* src/styles/App.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --bg-color: #111827;
   --card-color: #1F2937;
   --border-color: #374151;
-  --text-primary: #F9FAFB; /* Branco suave */
+  --text-primary: #F9FAFB; 
   --text-secondary: #9CA3AF;
   --accent-color: #3b82f6;
   --accent-color-hover: #2563eb;
@@ -34,7 +33,7 @@ body {
   padding: 1rem 1.5rem;
   font-weight: 600;
   font-size: 1.25rem;
-  color: var(--text-primary); /* AJUSTE: Garantindo que o texto do cabeçalho seja branco */
+  color: var(--text-primary);
 }
 
 .btn-custom {
@@ -56,7 +55,7 @@ body {
 .btn-custom.btn-success {
   background-color: var(--success-color);
   border-color: var(--success-color);
-  color: white; /* AJUSTE: Forçando o texto do botão de sucesso a ser branco */
+  color: white; 
 }
 
 .profile-name {

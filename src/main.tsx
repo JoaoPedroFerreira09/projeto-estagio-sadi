@@ -7,7 +7,7 @@ import App from './App.tsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './styles/App.css'; // Seu CSS customizado vem DEPOIS do Bootstrap
+import './styles/App.css'; 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
